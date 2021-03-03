@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+  text-transform: capitalize;
+}
+:root {
+  --primary-color: #457af5;
+  --secondary-color: #f0f3ff;
+}
+header {
+  width: 100%;
+  background-color: var(--secondary-color);
+  padding: 15px 10px 15px 10px;
+  font-size: 1.1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: padding 0.3s;
+}
+.menus {
+  width: 85%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  text-transform: capitalize;
+  padding: 20px;
+}
+.menus ul {
+  display: flex;
+  list-style-type: none;
+}
+.menu {
+  text-decoration: none;
+  color: black;
+  margin-right: 2rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.logo {
+  margin-left: 2rem;
+}
+.menu:hover {
+  color: var(--primary-color);
+}
+.login {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 5px;
+}
+.login:hover {
+  color: white;
+}
+.active {
+  color: var(--primary-color);
+}
+
+/* Index page */
+body {
+  background-color: #f0f2ff;
+}
+
+/* Hero  */
+.hero-container {
+  width: 90%;
+  height: 70vh;
+  max-width: 1200px;
+  margin: 5rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 2rem;
+  font-size: 1.2rem;
+}
+.hero-heading {
+  font-size: 3rem;
+  margin-bottom: 1.4rem;
+  line-height: 3rem;
+}
+.hero-heading span {
+  color: var(--primary-color);
+}
+.hero-image {
+  width: 500px;
+  border-radius: 20px;
+}
+.hero-link {
+  text-decoration: none;
+  display: inline-block;
+  margin: 1.5rem 2rem 0rem 0rem;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+}
+.hero-image {
+  margin-left: 0.5rem;
+}
+#sign-up-as-customer {
+  background-color: var(--primary-color);
+}
+#sign-up-as-mechanic {
+  background-color: #eb4d4b;
+}
+
+/* How it works */
+#how-it-works {
+  position: relative;
+  height: auto;
+  padding: 5rem 0rem 8rem 0px;
+  color: whitesmoke;
+  background-image: linear-gradient(#ff9f4a, #ff3c83);
+}
+.how-it-works-img {
+  width: 500px;
+}
+#how-it-works .how-it-works-container:nth-child(odd) .how-it-works-img {
+  margin-left: 2rem;
+}
+#how-it-works .how-it-works-container:nth-child(even) .how-it-works-img {
+  margin-right: 5rem;
+}
+.how-it-works-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+#how-it-works .how-it-works-container:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+.how-it-works-heading {
+  text-align: center;
+  font-size: 3rem;
+}
+.how-it-works-container-heading {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+.how-it-works-container p {
+  line-height: 1.8rem;
+  font-size: 1.1rem;
+}
+/* Shape css */
+.custom-shape-divider-top-1611506635 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1611506635 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 100px;
+}
+
+.custom-shape-divider-top-1611506635 .shape-fill {
+  fill: var(--secondary-color);
+}
+.custom-shape-divider-bottom-1611509465 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1611509465 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 100px;
+}
+
+.custom-shape-divider-bottom-1611509465 .shape-fill {
+  fill: var(--secondary-color);
+}
+
+/* Contact us */
+#contact-us-container {
+  width: 80%;
+  max-width: 1000px;
+  background-color: var(--primary-color);
+  color: white;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 1rem;
+  line-height: 2rem;
+  border-radius: 10px;
+}
+.contact-us-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.contact-us-image-container img {
+  width: 100px;
+  height: 40px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.contact-us-heading {
+  margin-bottom: 0.4rem;
+}
+.contact-us-image-container img:hover {
+  transform: scale(1.2);
+}

@@ -1,0 +1,10 @@
+color palete
+
+website:https://saruwakakun.com/en/color-ideas
+
+colors:
+#4072B3 
+#6088C6 
+#AEC4E5
+#EB8686 
+#C0C0C0

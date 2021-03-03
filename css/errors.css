@@ -1,0 +1,13 @@
+label.error,
+#custom-error {
+  display: block;
+  color: red;
+  margin-left: 0.3rem;
+  margin-top: 0.3rem;
+  font-weight: 600;
+  max-width: 250px;
+  /* line-height: 1.4rem; */
+}
+input {
+  color: black;
+}
