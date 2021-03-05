@@ -22,7 +22,7 @@
     <script src="./jquery/dist/jquery.validate.js"></script>
     <script src="./jquery/src/additional/pattern.js"></script>
     <script>
-        $("#document").ready(function() {
+        $("document").ready(function() {
 
             $.validator.addMethod("password_validator", function(value, element) {
                 param = new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/);

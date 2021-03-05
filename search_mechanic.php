@@ -24,6 +24,13 @@ if (isset($_POST['m_city']) && !empty($_POST['m_city'])) {
 }
 
 
+if (empty($_POST['m_pincode']) && empty($_POST['m_experience']) && empty($_POST['m_city']))
+    $sql .= " WHERE m_email in (SELECT m_email from booking_details WHERE booking_status='paid' or booking_status='rejected' or booking_status='booked')";
+else
+    $sql .= " AND m_email in (SELECT m_email from booking_details WHERE booking_status='paid' or booking_status='rejected' or booking_status='booked')";
+
+
+
 $mechanics = mysqli_query($conn, $sql);
 $mechanics = mysqli_fetch_all($mechanics, MYSQLI_ASSOC);
 

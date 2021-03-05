@@ -30,7 +30,7 @@ $email = $_SESSION["email"];
     </form>
     <div id="container">
         <?php
-        $mechanics = mysqli_query($conn, "SELECT * FROM mechanic_details WHERE m_city=(SELECT c_city FROM customer_details WHERE c_email='$email')");
+        $mechanics = mysqli_query($conn, "SELECT * FROM mechanic_details WHERE m_city=(SELECT c_city FROM customer_details WHERE c_email='$email') AND m_email in (SELECT m_email from booking_details WHERE booking_status='paid' or booking_status='rejected' or booking_status='booked')");
         if (mysqli_num_rows($mechanics) > 0) {
             foreach ($mechanics as $mechanic) {
                 echo "<div class='card'>";

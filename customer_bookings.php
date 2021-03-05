@@ -33,10 +33,10 @@ foreach ($booking_details as $booking_detail) {
             <p>Status:{$booking_detail['booking_status']}</p>
           </div>
         ";
-    if ($booking_detail["booking_status"] != "canceled")
+    if ($booking_detail["booking_status"] == "accepted" || $booking_detail["booking_status"] == "booked")
         echo "<button data-id='{$booking_detail["booking_id"]}' class='cancel-btn' >cancel</button>";
-    else if ($booking_detail["booking_status"] == "requested for payment")
-        echo "<button data-id='{$booking_detail["booking_id"]}' class='pay-btn'>Pay</button>";
+    else if ($booking_detail["booking_status"] == "request for payment")
+        echo "<button data-id='{$booking_detail["booking_id"]}' m_email='{$mechanic_detail[0]['m_email']}' class='pay-btn'>Pay</button>";
 } ?>
 
 <script src="jquery/lib/jquery.js"></script>
@@ -52,6 +52,10 @@ foreach ($booking_details as $booking_detail) {
                 else
                     console.log(data);
             })
+        });
+
+        $(document).on("click", ".pay-btn", function() {
+            window.location.href = "payment.php?id=" + $(this).attr("data-id") + "&m_email=" + $(this).attr("m_email");
         });
     })
 </script>

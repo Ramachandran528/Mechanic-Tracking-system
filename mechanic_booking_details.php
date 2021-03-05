@@ -43,15 +43,7 @@
       })
 
       $(document).on("click", ".request-payment-btn", function() {
-        $.post("change_booking_status.php", {
-          booking_id: $(this).attr("data-id"),
-          booking_data: "request for payment"
-        }, function(data) {
-          if (data == 1)
-            $("#booking-container").load("mechanic_booking_details_display.php");
-          else
-            alert("Unable to reject an error has occured");
-        })
+        window.location.href = "payment.php?id=" + $(this).attr("data-id");
       })
 
     })

@@ -68,3 +68,29 @@ ADD CONSTRAINT FOREIGN KEY(c_email) REFERENCES customer_details(c_email);
 
 ALTER TABLE booking_details
 ADD CONSTRAINT FOREIGN KEY(m_email) REFERENCES mechanic_details(m_email);
+
+
+CREATE TABLE IF NOT EXISTS payment_details(
+    payment_id int AUTO_INCREMENT,
+    from_email varchar(100),
+    from_card_name varchar(100),
+    from_card_number varchar(20),
+    from_cv int,
+    from_expiry_year varchar(10),
+    to_email varchar(100),
+    to_card_name varchar(100),
+    to_card_number varchar(20),
+    to_cv int,
+    to_expiry_year varchar(10),
+    amount int,
+    payment_status varchar(50),
+    payment_time TIMESTAMP,
+    primary key(payment_id)
+);
+
+ALTER TABLE payment_details
+ADD CONSTRAINT FOREIGN KEY(from_email) REFERENCES customer_details(c_email);
+
+ALTER TABLE payment_details
+ADD CONSTRAINT FOREIGN KEY(to_email) REFERENCES mechanic_details(m_email);
+
