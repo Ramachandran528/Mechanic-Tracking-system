@@ -63,7 +63,7 @@
                             } else {
                                 $.post("insert_details_customer.php", $("#signup_frm").serialize(), function(data) {
                                     if (data == 1)
-                                        window.location.href = "customer.php";
+                                        window.location.href = "mechanic_listing.php";
                                     else
                                         alert(data);
                                 });
@@ -75,11 +75,11 @@
             });
 
 
-            $.validator.addMethod("password_validator", function(value, element) {
-                param = new RegExp(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/);
+            $.validator.addMethod("regex_validator", function(value, element, params) {
+                param = new RegExp(params);
                 if (param.test(value))
                     return true;
-            }, "Invalid password");
+            }, "Invalid Entry");
 
 
 
@@ -93,7 +93,7 @@
                     password: {
                         required: true,
                         minlength: 6,
-                        password_validator: true
+                        regex_validator: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/
                     },
                     c_phone_no: {
                         required: true,
@@ -102,14 +102,22 @@
                         digits: true
                     },
                     c_door_no: "required",
-                    c_street_name: "required",
-                    c_city: "required",
+                    c_street_name: {
+                        required: true
+                    },
+                    c_city: {
+                        required: true,
+                        regex_validator: /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/
+                    },
                     c_pincode: {
                         required: true,
                         minlength: 6,
                         maxlength: 6
                     },
-                    c_state: "required"
+                    c_state: {
+                        required: true,
+                        regex_validator: /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/
+                    }
                 },
 
                 messages: {
@@ -121,7 +129,7 @@
                     password: {
                         required: "Password is required",
                         minlength: "Password should be minimum of 6 characters",
-                        password_validator: "Password should contain a lower case ,a upper case and a number"
+                        regex_validator: "Password should contain a lower case ,a upper case and a number"
                     },
                     c_phone_no: {
                         required: "Phone is requried",
@@ -129,8 +137,13 @@
                         maxlength: "Number should be 10 digits"
                     },
                     c_door_no: "Door number is requried",
-                    c_street_name: "Street name is required",
-                    c_city: "City is required",
+                    c_street_name: {
+                        required: "Street name is required"
+                    },
+                    c_city: {
+                        required: "City is required",
+                        regex_validator: "Invalid city name"
+                    },
                     c_pincode: {
                         required: "Pincode is required",
                         minlength: "Pincode must be of 6 digits",

@@ -8,7 +8,7 @@
 /* Centering the login form */
 body {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@ body {
 }
 
 /* Adding styles to login form */
-#login-frm {
+form {
   background-color: white;
   width: fit-content;
   height: auto;
@@ -36,8 +36,11 @@ input {
   background-color: rgba(240, 235, 255, 0.1);
 }
 
+input[type="text"],
+input[type="number"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+textarea {
   box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.5);
 }
 

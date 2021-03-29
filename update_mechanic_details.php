@@ -6,11 +6,13 @@ include "config.php";
 
 $sql = "UPDATE mechanic_details
           SET m_name='{$_POST['m_name']}',
-              m_phone_no={$_POST['m_phone_no']},
-              m_door_no={$_POST['m_door_no']},
+              m_phone_no='{$_POST['m_phone_no']}',
+              m_door_no='{$_POST['m_door_no']}',
               m_pincode={$_POST['m_pincode']},
+              m_street_name='{$_POST['m_street_name']}',
               m_city='{$_POST['m_city']}',
               m_state='{$_POST['m_state']}',
+              m_area='{$_POST['m_area']}',
               m_landmark='{$_POST['m_landmark']}',
               m_experience={$_POST['m_experience']},
               m_opening_time='{$_POST['m_opening_time']}',

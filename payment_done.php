@@ -7,12 +7,12 @@ $email = $_SESSION["email"];
 
 
 $sql = "UPDATE payment_details 
-SET from_email='$email',
-    from_card_name='{$_POST['c_name']}',
+SET from_card_name='{$_POST['c_name']}',
     from_card_number='{$_POST['c_number']}',
     from_cv='{$_POST['c_ccv']}',
-    from_expiry_year='{$_POST['c_year']}'
-    WHERE to_email='{$_POST['m_email']}' AND payment_status='pending'
+    from_expiry_year='{$_POST['c_year']}',
+    payment_status='paid'
+    WHERE to_email='{$_POST['m_email']}' AND payment_status='pending' AND from_email='$email'
     ";
 
 if (mysqli_query($conn, $sql)) {

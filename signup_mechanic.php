@@ -18,7 +18,7 @@
 <body>
     <div class="form-container">
         <h1 class="heading">Sign up</h1>
-        <form action="" id="signup_frm">
+        <form action="" id="signup_frm" autocomplete="off">
             <label>username <br>
                 <input type="text" name="m_name"></label><br>
             <label>Email <br>
@@ -38,8 +38,8 @@
                 <input type="number" name="m_pincode"></label><br>
             <label>Landmark <br>
                 <input type="text" name="m_landmark"></label><br>
-            <label>State <br>
-                <input type="text" name="m_state"></label><br>
+            <label>Area <br>
+                <input type="text" name="m_area"></label><br>
             <label>Experience <br>
                 <input type="number" name="m_experience"></label><br>
             <label>Opening Time <br>
@@ -70,9 +70,9 @@
                             } else {
                                 $.post("insert_details_mechanic.php", $("#signup_frm").serialize(), function(data) {
                                     if (data == 1)
-                                        window.location.href = "mechanic.php";
+                                        window.location.href = "mechanic_booking_details.php";
                                     else
-                                        alert("Not inserted");
+                                        console.log(data);
                                 })
                             }
                         }
@@ -127,6 +127,9 @@
                     },
                     m_closing_time: {
                         required: true
+                    },
+                    m_area: {
+                        required: true
                     }
                 },
                 messages: {
@@ -168,6 +171,9 @@
                     },
                     m_closing_time: {
                         required: "Shop closing time is required"
+                    },
+                    m_area: {
+                        required: "Area is required"
                     }
                 }
             })

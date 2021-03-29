@@ -6,6 +6,7 @@ $query_result1 = mysqli_query($conn, "INSERT INTO login_details(email,password,r
 if ($query_result && $query_result1) {
     session_start();
     $_SESSION["email"] = $_POST['email'];
+    $_SESSION["role"] = "customer";
     echo "1";
 } else
     echo mysqli_error($conn);

@@ -20,6 +20,8 @@ echo '  <label>Username</label><br>
         <input type="number" name="m_pincode" value="' . $query_result[0]['m_pincode'] . '"><br><br>
         <label>City</label><br>
         <input type="text" name="m_city" value="' . $query_result[0]['m_city'] . '"><br><br>
+        <label>Area</label><br>
+        <input type="text" name="m_area" value="' . $query_result[0]['m_area'] . '"><br><br>
         <label>State</label><br>
         <input type="text" name="m_state" value="' . $query_result[0]['m_state'] . '"><br><br>
         <label>Landmark</label><br>

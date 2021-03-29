@@ -1,0 +1,20 @@
+body {
+  width: 100%;
+  height: auto;
+}
+form {
+  padding: 2rem 5rem;
+  margin: 3rem 0px;
+}
+textarea {
+  width: 300px;
+  overflow: none;
+  border: none;
+  resize: none;
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+label {
+  font-size: 1.1rem;
+}

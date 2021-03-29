@@ -8,17 +8,18 @@ include "login_protected.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mechanic page</title>
+    <link rel="stylesheet" href="./css/myaccount.css" />
+    <link rel="stylesheet" href="./css/errors.css" />
 </head>
 
 <body>
-    <h1>Mechanic page</h1>
-    <a href="logout.php">Logout</a>
-    <?php
-    include "login_header.php";
-    include "image_upload.php";
-    ?>
-    <form id="mechanic_details_frm">
-    </form>
+    <div class="container">
+        <?php
+        include "image_upload.php";
+        ?>
+        <form id="mechanic_details_frm">
+        </form>
+    </div>
     <script src="./jquery/lib/jquery.js"></script>
     <script src="./jquery/dist/jquery.validate.js"></script>
     <script>
@@ -84,6 +85,9 @@ include "login_protected.php";
                         required: true,
                         maxlength: 2
                     },
+                    m_area: {
+                        required: true
+                    },
                     m_opening_time: {
                         required: true
                     },
@@ -124,6 +128,9 @@ include "login_protected.php";
                     m_experience: {
                         required: "Experience is required",
                         maxlength: "Invalid experience"
+                    },
+                    m_area: {
+                        required: "Area is required"
                     },
                     m_opening_time: {
                         required: "Shop opening time is required"

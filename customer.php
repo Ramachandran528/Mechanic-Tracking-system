@@ -8,16 +8,17 @@ include "login_protected.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>customer page</title>
+    <link rel="stylesheet" href="./css/myaccount.css" />
 </head>
 
 <body>
-    <h1>customer page</h1>
-    <?php
-    include "login_header.php";
-    include "image_upload.php";
-    ?>
-    <form action="" id="customer_details_frm" enctype="multipart/form-data" method="post">
-    </form>
+    <div class="container">
+        <?php
+        include "image_upload.php";
+        ?>
+        <form action="" id="customer_details_frm" method="post" autocomplete="off">
+        </form>
+    </div>
     <script src="./jquery/lib/jquery.js"></script>
     <script src="./jquery/dist/jquery.validate.js"></script>
     <script>
@@ -33,7 +34,7 @@ include "login_protected.php";
                         success: function(data) {
                             if (data == 1) {
                                 alert("Data Updated Successfully");
-                                $("#customer_details_frm").load("my_account_customer.php");
+                                $("#customer_details_frm").load(data);
                             } else
                                 alert("Unable to update the data");
                         }

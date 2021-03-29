@@ -15,6 +15,9 @@ $mechanic_details = mysqli_fetch_array(mysqli_query($conn, "SELECT c_vehicle_nam
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking page</title>
+    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/mechanic_booking.css" />
+    <link rel="stylesheet" href="./css/errors.css" />
 </head>
 
 <body>
@@ -96,7 +99,7 @@ $mechanic_details = mysqli_fetch_array(mysqli_query($conn, "SELECT c_vehicle_nam
                     vehicle_name: "vehicle name is required",
                     vehicle_model: "vehicle model is requried",
                     vehicle_type: "vehicle type is required",
-                    repair_description: "repair desctription"
+                    repair_description: "repair desctription is required"
                 }
             })
         })

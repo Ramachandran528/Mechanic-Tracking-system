@@ -16,7 +16,7 @@
         <label id="custom-error"></label>
         <input type="password" name="password" id="password" placeholder="Password"><br><br>
         <input type="submit" value="login" name="login">
-        <p class="sign-up-link">Create a new account? <a href="#">sign up</p>
+        <p class="sign-up-link">Create a new account? <a href="signup_customer.php">sign up</p>
     </form>
     <script src="./jquery/lib/jquery.js"></script>
     <script src="./jquery/dist/jquery.validate.js"></script>
@@ -41,9 +41,9 @@
                             if (data == -1)
                                 $("#custom-error").text("An user with this email or password does not exists");
                             else if (data == "customer")
-                                window.location.href = "customer.php";
+                                window.location.href = "mechanic_listing.php";
                             else if (data == "mechanic")
-                                window.location.href = "mechanic.php";
+                                window.location.href = "mechanic_booking_details.php";
                         }
                     })
                 }

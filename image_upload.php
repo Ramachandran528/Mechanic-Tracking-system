@@ -24,7 +24,7 @@ if ($role == "mechanic") {
 <body>
     <form action="" enctype="multipart/form-data" id="frm">
         <?php
-        echo "<img src='$image_location' alt='' id='preview_image' width='100'><br>";
+        echo "<img src='$image_location' alt='' id='preview_image'><br>";
         ?>
         <input type="file" id="file" name="image"><br><br>
         <p id="errors"></p>
