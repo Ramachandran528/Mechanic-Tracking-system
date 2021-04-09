@@ -39,25 +39,23 @@ $mechanics = mysqli_fetch_all($mechanics, MYSQLI_ASSOC);
 if (count($mechanics) > 0) {
     foreach ($mechanics as $mechanic) {
         echo "<div class='card'>";
-        if ($mechanic["m_photo"] == "")
-            echo "<div class='card-img'><img src='images/default-image.jpg' width='100'/></div>";
-        else
-            echo "<div class='card-img'><img src='{$mechanic["m_photo"]}' width='100'/></div>";
-        $address = "Door No: {$mechanic['m_door_no']} {$mechanic['m_street_name']} {$mechanic['m_area']} {$mechanic['m_city']} {$mechanic['m_pincode']} {$mechanic['m_state']}";
+        echo "<div class='card-img'><img src='{$mechanic["m_photo"]}' width='100'/></div>";
+        $address = "Door No: {$mechanic['m_door_no']} {$mechanic['m_street_name']} {$mechanic['m_area']} {$mechanic['m_city']} {$mechanic['m_pincode']} {$mechanic['m_state']} {$mechanic['m_landmark']}";
         echo "<div class='card-content'>
               <p>Name:{$mechanic['m_name']}</p>
               <p>Email:{$mechanic['m_email']}</p>
               <p>Contact:{$mechanic['m_phone_no']}</p>
-              <p>Address:{$address}</p>
-              <p>Landmark:{$mechanic['m_landmark']}</p>
-              <p>Experience:{$mechanic['m_experience']} yrs</p>
-              <p>Opening Time:{$mechanic['m_opening_time']}AM</p>
-              <p>Closing Time:{$mechanic['m_closing_time']}PM</p>
+              <p>Address:{$address}</p>";
+        echo "<p>Experience:{$mechanic['m_experience']} yrs</p>
               </div>
-              <input type='button' value='book' class='book_btn' data-email='{$mechanic['m_email']}'/>
+              <div class='buttons'>
+                <input type='button' value='book' class='book_btn' data-email='{$mechanic['m_email']}'/>
               </div>
-              <hr/>
+              </div>
              ";
     }
 } else
-    echo "No result found";
+    echo "
+    <div class='no_results_found_container'>
+        <img src='images/no_results_found.png'/>
+    </div>";

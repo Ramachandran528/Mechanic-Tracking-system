@@ -24,3 +24,4 @@ menus.forEach(menu => {
         menu.classList.add("active");
     });
 });
+console.log(menus)

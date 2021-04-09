@@ -20,14 +20,16 @@ $role = $_SESSION["role"];
 </head>
 
 <body>
-    <?php
-    if ($role == 'customer') {
-        $sql = "SELECT * FROM payment_details WHERE from_email='$email' order by payment_time desc";
-        $payment_details = mysqli_query($conn, $sql);
-        $payment_details = mysqli_fetch_all($payment_details, MYSQLI_ASSOC);
+    <div id="img_container"></div>
+    <div class="container">
+        <?php
+        if ($role == 'customer') {
+            $sql = "SELECT * FROM payment_details WHERE from_email='$email' order by payment_time desc";
+            $payment_details = mysqli_query($conn, $sql);
+            $payment_details = mysqli_fetch_all($payment_details, MYSQLI_ASSOC);
 
-        if (count($payment_details) > 0) {
-            echo "<table>
+            if (count($payment_details) > 0) {
+                echo "<table>
                 <tr>
                     <th>Mechanic Email</th>
                     <th>Amount</th>
@@ -35,22 +37,22 @@ $role = $_SESSION["role"];
                 </tr>
              ";
 
-            foreach ($payment_details as $payment_detail) {
-                echo "<tr>
+                foreach ($payment_details as $payment_detail) {
+                    echo "<tr>
                         <td>{$payment_detail['to_email']}</td>
                         <td>{$payment_detail['amount']}</td>
                         <td>{$payment_detail['payment_status']}</td>
                      </tr>";
-            }
-        } else
-            echo "<h3>No payments Done</h3>";
-    } else {
-        $sql = "SELECT * FROM payment_details WHERE to_email='$email' order by payment_time desc";
-        $payment_details = mysqli_query($conn, $sql);
-        $payment_details = mysqli_fetch_all($payment_details, MYSQLI_ASSOC);
+                }
+            } else
+                echo "<h3>No payments Done</h3>";
+        } else {
+            $sql = "SELECT * FROM payment_details WHERE to_email='$email' order by payment_time desc";
+            $payment_details = mysqli_query($conn, $sql);
+            $payment_details = mysqli_fetch_all($payment_details, MYSQLI_ASSOC);
 
-        if (count($payment_details) > 0) {
-            echo "<table>
+            if (count($payment_details) > 0) {
+                echo "<table>
                 <tr>
                     <th>Requested user</th>
                     <th>Amount</th>
@@ -58,17 +60,18 @@ $role = $_SESSION["role"];
                 </tr>
              ";
 
-            foreach ($payment_details as $payment_detail) {
-                echo "<tr>
+                foreach ($payment_details as $payment_detail) {
+                    echo "<tr>
                         <td>{$payment_detail['from_email']}</td>
                         <td>{$payment_detail['amount']}</td>
                         <td>{$payment_detail['payment_status']}</td>
                      </tr>";
-            }
-        } else
-            echo "<h3>No payments Done</h3>";
-    }
-    ?>
+                }
+            } else
+                echo "<h3>No payments Done</h3>";
+        }
+        ?>
+    </div>
 </body>
 
 </html>
